@@ -17,7 +17,7 @@ exports.resetPasswordToken = async(req,res)=>{
         const updatedDetails = await User.findOneAndUpdate({email:email},
             {token:token,resetPasswordExpires:Date.now()+5*60*1000},{new:true})
         
-        const url = `http://localhost:3000/update-password/${token}`
+        const url = `http://study-notion-savar.vercel.app/update-password/${token}`
 
         await mailSender(email,'Password Reset Link',`Password Reset Link: ${url}`)
 
