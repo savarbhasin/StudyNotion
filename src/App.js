@@ -16,7 +16,7 @@ import Settings from "./components/core/Dashboard/Settings/Settings";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./components/utils/constants";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import EditCourse from "./components/core/Dashboard/EditCourse";
@@ -29,8 +29,16 @@ import Instructor from "./components/core/Dashboard/InstructorDashboard/Instruct
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
 function App() {
+  const dispatch = useDispatch()
   const {user} = useSelector(state=>state.profile)
-  
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      const token = JSON.parse(localStorage.getItem("token"))
+      dispatch(getUserDetails(token, navigate))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, [])
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
       <Navbar/>
