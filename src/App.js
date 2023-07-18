@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import Home from './pages/Home'
 import Navbar from "./components/Common/Navbar";
@@ -28,9 +28,11 @@ import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
+import { getUserDetails } from "./components/service/operations/profileAPI";
 function App() {
   const dispatch = useDispatch()
   const {user} = useSelector(state=>state.profile)
+  const navigate = useNavigate()
   useEffect(() => {
     if (localStorage.getItem("token")) {
       const token = JSON.parse(localStorage.getItem("token"))
