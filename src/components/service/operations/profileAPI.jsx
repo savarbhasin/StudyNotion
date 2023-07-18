@@ -1,13 +1,15 @@
 import { toast } from "react-hot-toast"
 import { apiConnector } from "../apiconnector"
 import { profileEndpoints } from "../apis"
+import { setUser } from "../../../slices/ProfileSlice"
+import { logout } from "./authapi"
 
 const {GET_USER_ENROLLED_COURSES_API,GET_INSTRUCTOR_DASHBOARD_DATA_API,GET_USER_DETAILS_API} = profileEndpoints
 
 export function getUserDetails(token, navigate) {
     return async (dispatch) => {
       const toastId = toast.loading("Loading...")
-      dispatch(setLoading(true))
+      
       try {
         const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
           Authorization: `Bearer ${token}`,
@@ -25,7 +27,7 @@ export function getUserDetails(token, navigate) {
         toast.error("Could Not Get User Details")
       }
       toast.dismiss(toastId)
-      dispatch(setLoading(false))
+     
     }
 }
 
