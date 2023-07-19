@@ -37,4 +37,4 @@ StudyNotion is a web application built using the MERN (MongoDB, Express.js, Reac
 
 1. **Course Verification by Admin:** Before making a course public, the platform will introduce a course verification process where an admin will review the course content to ensure its quality and adherence to community guidelines.
 
-2. **Enhanced Security Measures:** To protect course content, StudyNotion will implement robust security measures to prevent video lectures and course materials from being downloaded or accessed by unauthorized users.
+2. **Enhanced Security Measures:** To protect course content, StudyNotion will implement robust security measures to prevent video lectures and course materials from being downloaded by unauthorized users.
