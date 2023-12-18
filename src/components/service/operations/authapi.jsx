@@ -83,7 +83,7 @@ export function signup(accountType,firstName,lastName,email,password,otp,confirm
         const toastId = toast.loading('Signing up...')
         try{
             const result = await apiConnector("POST",SIGNUP_API,{email,accountType,firstName,lastName,password,confirmPassword,otp})
-            console.log(result.data.success)
+            // console.log(result.data.success)
             if(!result.data.success){
                 throw new Error(result.data.message)   
             }
