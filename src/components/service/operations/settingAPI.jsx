@@ -22,7 +22,7 @@ export function updateDisplayPicture(token,formData){
                 Authorization:'Bearer ' + token,
             }
             )
-            console.log(response)
+            // console.log(response)
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
