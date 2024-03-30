@@ -39,4 +39,4 @@ StudyNotion is a web application built using the MERN (MongoDB, Express.js, Reac
 
 2. **Enhanced Security Measures:** To protect course content, StudyNotion will implement robust security measures to prevent video lectures and course materials from being downloaded by unauthorized users.
 
-3. **Moving the project to typescript
+3. **Moving the project to typescript**
