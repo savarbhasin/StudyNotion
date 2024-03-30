@@ -1,4 +1,4 @@
-# StudyNotion(backend down hosted on render)
+# StudyNotion (backend down-hosted on render(low activity))
 
 StudyNotion is a web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It provides a platform similar to Udemy, where users can sign up and log in as either an instructor or a student. Instructors can create courses, make them public, and students can purchase these courses using Razorpay integration for payment processing.
 
